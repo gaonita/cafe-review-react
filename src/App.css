@@ -29,6 +29,11 @@ i {
     color: purple;
 }
 
+.footer {
+    font-size: 12px;
+    padding: 40px;
+}
+
 .main {
     display: flex;
     justify-content: center;
