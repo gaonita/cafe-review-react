@@ -14,22 +14,22 @@ class Cafe extends Component {
     }
 
     componentDidMount() {
-        const db = firestore()
-        const self = this
+        const db = firestore();
+        const self = this;
         db.collection("cafe")
             .onSnapshot(function (collection) {
                 //const firebasedata = collection.docs
                 //const rawdata = collection.docs.map(doc => doc.data())
                 const data = collection.docs.map(doc => {
                     // Add id to object, method 1
-                    const documentData = doc.data()
-                    documentData.id = doc.id
+                    const documentData = doc.data();
+                    documentData.id = doc.id;
                     return documentData
 
                     // Add id to object, method 2 (copy properties from existing object)
                     //const documentData = doc.data()
                     //return { ...documentData, id: doc.id}
-                })
+                });
 
                 //const data = collection.docs.map(doc => doc.data())
 
@@ -43,13 +43,12 @@ class Cafe extends Component {
         //       const cafes = this.state.cafes
         //       const employees = this.state.employees
         const {cafes} = this.state;
-        console.log(cafes);
 
         let cafeList = cafes.map(cafe => {
             return (
                     <CafeCard cafe={cafe}/>
             )
-        })
+        });
         return (
 
                 <div>

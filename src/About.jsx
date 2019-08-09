@@ -11,7 +11,7 @@ const About = () => {
             <p className="abouttext">
                 My name is Gaon.
                 I am a junior developer and also a UX designer<br/>
-                who cares about future of this world.
+                who cares about future of the world.
             </p>
 
             <a className="portfolio" href="https://gaonita.github.io/" target="_blank">

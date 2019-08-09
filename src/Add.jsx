@@ -7,23 +7,23 @@ class Add extends Component {
     constructor(props) {
         super(props);
 
-        const componentInstance = this
-        componentInstance.submit = componentInstance.submit.bind(componentInstance)
+        const componentInstance = this;
+        componentInstance.submit = componentInstance.submit.bind(componentInstance);
         componentInstance.state = {
             finished: false
         }
     }
 
     submit(event) {
-        event.preventDefault()
-        console.log(this)
+        event.preventDefault();
+        console.log(this);
 
-        const db = firestore()
-        const cafename = document.getElementById('cafename').value
-        const cafeaddress = document.getElementById('cafeaddress').value
-        const cafedescription = document.getElementById('cafedescription').value
-        const cafesustainability = document.getElementById('cafedsustainability').value
-        const cafeimg = document.getElementById('cafeimgurl').value
+        const db = firestore();
+        const cafename = document.getElementById('cafename').value;
+        const cafeaddress = document.getElementById('cafeaddress').value;
+        const cafedescription = document.getElementById('cafedescription').value;
+        const cafesustainability = document.getElementById('cafedsustainability').value;
+        const cafeimg = document.getElementById('cafeimgurl').value;
 
         const cafe = {
             name: cafename,
@@ -31,10 +31,10 @@ class Add extends Component {
             description: cafedescription,
             sustainability: cafesustainability,
             imgurl: cafeimg
-        }
+        };
 
-        db.collection('cafe').add(cafe)
-        this.setState({finished: true})
+        db.collection('cafe').add(cafe);
+        this.setState({finished: true});
         return false
     }
 
@@ -72,5 +72,6 @@ class Add extends Component {
             </div>
         )
     }
-};
+}
+
 export default Add

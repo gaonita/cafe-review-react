@@ -10,13 +10,17 @@ class CafeCard extends Component {
 
 
     delete() {
-        const  db= firestore()
+        const  db= firestore();
         db.collection('cafe').doc(this.props.cafe.id).delete()
     }
 
+    edit() {
+        const db = firestore();
+        db.collection('cafe').doc(this.props.cafe.id).update()
+    }
 
     render(){
-        const cafe = this.props.cafe
+        const cafe = this.props.cafe;
 
         return (
             <li>
@@ -27,9 +31,13 @@ class CafeCard extends Component {
                     <div className="li-text">
                         <h4 className="li-head">{cafe.name}</h4>
                         <p className="li-address">{cafe.address}</p>
-                        <p className="li-sustainability">Sustainablitiy Score: {cafe.sustainability}</p>
+                        <p className="li-sustainability">Sustainability Score: {cafe.sustainability}</p>
                         <p className="li-description">{cafe.description}</p>
                     </div>
+                    <button className="editBtn" onClick={this.edit}>Edit
+                        <span className="infoText">
+                            Edit this review</span>
+                    </button>
                     <button className="deleteBtn" onClick={this.delete}>Delete
                         <span className="warningtext">
                             Warning! delete all contents. you can't undo it after</span>
