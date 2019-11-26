@@ -4,7 +4,7 @@ import React from 'react';
 const Main = () => {
     return (
         <div className="main">
-            <img className="mainImg"
+            <img className="mainImg" alt="cover"
                 src="https://images.unsplash.com/photo-1513440758715-7a3c5539b7fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
                 style={{height: '550px', objectFit: 'cover'}}/>
             <div className="mainIntro">

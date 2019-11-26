@@ -8,7 +8,9 @@ class Add extends Component {
         super(props);
 
         const componentInstance = this;
-        componentInstance.submit = componentInstance.submit.bind(componentInstance);
+        componentInstance.submit =
+            componentInstance.submit.bind(componentInstance);
+
         componentInstance.state = {
             finished: false
         }

@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
 import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import store from './store';
 
 
 const firebaseConfig = {
@@ -20,8 +22,11 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
+
 ReactDOM.render(
-    <BrowserRouter> <App /> </BrowserRouter>,
+    <Provider store = {store}>
+    <BrowserRouter> <App /> </BrowserRouter>
+    </Provider>,
 
     document.getElementById('root')
 );

@@ -14,14 +14,14 @@ const About = () => {
                 who cares about future of the world.
             </p>
 
-            <a className="portfolio" href="https://gaonita.github.io/" target="_blank">
+            <a className="portfolio" href="https://gaonita.github.io/" rel="noopener noreferrer" target="_blank">
             <i className="fas fa-cat"></i>
             </a>
 
-            <a className="github" href="https://github.com/gaonita" target="_blank">
+            <a className="github" href="https://github.com/gaonita" rel="noopener noreferrer" target="_blank">
                 <i class="fab fa-github"></i>
             </a>
-            <a className="linkedin" href="https://www.linkedin.com/in/gaonyang/" target="_blank">
+            <a className="linkedin" href="https://www.linkedin.com/in/gaonyang/" rel="noopener noreferrer"  target="_blank">
                 <i className="fab fa-linkedin-in"></i>
             </a>
 

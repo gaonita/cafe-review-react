@@ -196,9 +196,34 @@ li {
     visibility: visible;
 }
 
-#buttoncard {
-    border: solid 1px dimgray;
+
+.editBtn {
+    color: dimgrey;
+    margin: 0px 0px 10px 0px;
+    border: none;
+    position: relative;
+    display: inline-block;
 }
+
+/*.editBtn:hover {*/
+    /*color: darkslategrey;*/
+    /*font-weight: bold;*/
+/*}*/
+
+.editBtn .infoText {
+    /*visibility: hidden;*/
+    width: 350px;
+    font-size: 12px;
+    text-align: center;
+    padding-right: 24px;
+    position: absolute;
+    z-index: 10;
+}
+
+/*.editBtn:hover .infoText {*/
+    /*visibility: visible;*/
+/*}*/
+
 
 .addForm {
     margin: auto;
