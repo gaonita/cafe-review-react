@@ -44,7 +44,12 @@ class Cafe extends Component {
                 <ul className="cafeList">
                     {cafeList}
                     <li className="card" id="buttoncard">
-                        <NavLink className="addBtn" to='/add'>+</NavLink>
+                        <NavLink className="addBtn" to='/add'>
+                            <i className="icons">
+                            <i className="pencil alternate icon"></i>
+                            <i className="bottom right corner add icon"></i>
+                            </i>
+                        </NavLink>
                     </li>
                 </ul>
             </div>

@@ -8,7 +8,7 @@ const Main = () => {
                 src="https://images.unsplash.com/photo-1513440758715-7a3c5539b7fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
                 style={{height: '550px', objectFit: 'cover'}}/>
             <div className="mainIntro">
-                <h1 className="mainTitle">SOfO CAFE REVIEWS
+                <h1 className="mainTitle">SOFO CAFE REVIEWS
                 </h1>
                 <h4>Share your experience with consideration of sustainable future </h4>
                 <p className="mainText">

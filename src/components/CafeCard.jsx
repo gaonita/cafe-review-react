@@ -44,9 +44,7 @@ class CafeCard extends Component {
         }
 }
 
-const mapStateToProps = (state) => ({
-    cafe: state.cafe
-})
+
 
 const mapDispatchToProps = (dispatch) => {
     return{

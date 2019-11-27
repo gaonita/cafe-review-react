@@ -1,5 +1,5 @@
 import React from 'react'
-
+import me from '../img/me.png'
 
 const About = () => {
     return (
@@ -15,15 +15,18 @@ const About = () => {
             </p>
 
             <a className="portfolio" href="https://gaonita.github.io/" rel="noopener noreferrer" target="_blank">
-            <i className="fas fa-cat"></i>
+                <img src={me} />
             </a>
 
+            <div className="links">
             <a className="github" href="https://github.com/gaonita" rel="noopener noreferrer" target="_blank">
-                <i class="fab fa-github"></i>
+                <i className="huge github icon"></i>
             </a>
+
             <a className="linkedin" href="https://www.linkedin.com/in/gaonyang/" rel="noopener noreferrer"  target="_blank">
-                <i className="fab fa-linkedin-in"></i>
+                <i className="huge linkedin alternate icon"></i>
             </a>
+            </div>
 
         </div>
     )
