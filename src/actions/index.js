@@ -3,6 +3,7 @@ import {firestore} from "firebase";
 export const REQUEST = 'REQUEST';
 export const SUCCESS = 'SUCCESS';
 export const DELETE = 'DELETE';
+export const EDIT = 'EDIT';
 
 export const requestData = () => ({
     type: REQUEST
@@ -18,11 +19,31 @@ export const deleteData = (docId) => ({
     docId:docId
 });
 
+export const edit = (docId, cafeName) => ({
+    type: EDIT,
+    docId:docId,
+    name: cafeName
+});
+
+
+export const editDoc = (docId, cafeName) => {
+    return async dispatch =>{
+        const promise = firestore().collection('cafe').doc(docId).update({
+            name: cafeName
+        });
+        const callback = () => {
+            dispatch(edit(docId,cafeName))
+        };
+        promise.then(callback).catch(error => console.error(error))
+    }
+};
+
+
+
 export const deleteDoc = (docId) => {
     return async dispatch => {
         // const deletedArr = [];
         const promise = firestore().collection('cafe').doc(docId).delete();
-
         const callback = querySnapshot => {
             // querySnapshot.forEach(doc => {
             //     const deletedData = doc.data();

@@ -140,13 +140,12 @@ li {
 
 .li-text {
     border: solid 1px gray;
-
     height: 30vh;
     vertical-align: middle;
     width: 35vw;
 }
 
-.li-head {
+#li-head {
     margin: 0;
     padding-top: 10px;
     font-size: 20px;

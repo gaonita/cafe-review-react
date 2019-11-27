@@ -15,7 +15,7 @@ const About = () => {
             </p>
 
             <a className="portfolio" href="https://gaonita.github.io/" rel="noopener noreferrer" target="_blank">
-                <img src={me} />
+                <img src={me} alt='icon'/>
             </a>
 
             <div className="links">

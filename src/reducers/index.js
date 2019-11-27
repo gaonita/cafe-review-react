@@ -1,4 +1,4 @@
-import {REQUEST, SUCCESS,DELETE} from '../actions';
+import {REQUEST, SUCCESS,DELETE, EDIT} from '../actions';
 
 const defaultState = {
     cafes:[],
@@ -16,6 +16,10 @@ const cafeReducer = (state = defaultState, action) => {
         case DELETE:
             return {...state, isFetching:false,
                 cafes: state.cafes.filter(doc => doc.id !== action.docId)};
+        case EDIT:
+            console.log(action.name);
+            return {...state, isFetching:false,
+            cafes: state.cafes.map(doc=> doc.id === action.docId? {...doc, name:action.name} : {...doc})};
         default:
             return state;
     }
