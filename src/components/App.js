@@ -15,10 +15,10 @@ class App extends Component {
                 <Header/>
                 <div>
                     <Switch>
-                        <Route exact path='/' component={Main}></Route>
-                        <Route exact path='/about' component={About}></Route>
-                        <Route exact path='/cafe' component={Cafe}></Route>
-                        <Route exact path='/add' component={Add}></Route>
+                        <Route exact path='/' component={Main}/>
+                        <Route path='/about' component={About}/>
+                        <Route path='/cafe' component={Cafe}/>
+                        <Route path='/add' component={Add}/>
 
                     </Switch>
                 </div>
