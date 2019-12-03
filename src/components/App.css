@@ -204,7 +204,8 @@ li {
 }
 
 .editing {
-    background-color: greenyellow;
+    background-color: lightcyan;
+
 }
 
 
@@ -288,6 +289,13 @@ textarea:hover::placeholder {
     color: gray;
 }
 
+
+.detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 60em) {
     .cafeList {
         flex-direction: column;
@@ -343,6 +351,8 @@ textarea:hover::placeholder {
     }
 
 }
+
+
 
 @media (max-width: 60em) {
 

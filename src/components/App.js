@@ -5,6 +5,7 @@ import Main from './Main';
 import About from './About';
 import Cafe from './Cafe';
 import Add from './Add';
+import Detail from './Detail';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
 
@@ -17,7 +18,8 @@ class App extends Component {
                     <Switch>
                         <Route exact path='/' component={Main}/>
                         <Route path='/about' component={About}/>
-                        <Route path='/cafe' component={Cafe}/>
+                        <Route exact path='/cafe/' component={Cafe}/>
+                        <Route path='/cafe/:id' component={Detail}/>
                         <Route path='/add' component={Add}/>
 
                     </Switch>

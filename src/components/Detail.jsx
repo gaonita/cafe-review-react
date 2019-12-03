@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import {deleteDoc} from '../actions';
-import {editDoc} from "../actions";
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
+import CafeCard from './CafeCard';
+import {connect} from "react-redux";
+import {deleteDoc, editDoc} from "../actions";
 
-class CafeCard extends Component {
+
+class Detail extends Component {
+
     constructor(props) {
         super(props);
-        this.myRef =React.createRef();
+        this.myRef = React.createRef();
     }
 
     state = {
@@ -30,8 +32,11 @@ class CafeCard extends Component {
 
     editName = () => {
         this.setState({editing: true},
-            () => {this.myRef.current.focus()}
-        )};
+            () => {
+                this.myRef.current.focus()
+            }
+        )
+    };
 
     save = () => {
         this.setState({
@@ -64,11 +69,18 @@ class CafeCard extends Component {
         }
     };
 
+
     render() {
         const {editing} = this.state;
+
         const cafe = this.props.cafe;
+        const params = this.props.match.params;
+        const id = params.id;
+        // console.log(this.props)
+        // console.log(id);
+
         return (
-            <li>
+            <div className="detail">
                 <div className="card" key={cafe.id} style={{minHeight: '150px'}}>
                     <div className="li-img">
                         <img src={cafe.imgurl} alt="Alt"/>
@@ -77,7 +89,6 @@ class CafeCard extends Component {
                         <h4 id="li-head"
                             className={editing ? 'editing' : ''}
                             contentEditable={editing}
-                            // onClick={this.toggleEdit}
                             ref={this.myRef}
                             onBlur={this.save}
                             onKeyDown={this.handleKeyDown}
@@ -86,17 +97,27 @@ class CafeCard extends Component {
                         <p className="li-sustainability">Sustainability Score: {cafe.sustainability}</p>
                         <p className="li-description">{cafe.description}</p>
                     </div>
-                    <button className="editBtn">
-                        <Link to={`/cafe/${cafe.id}`} cafe={cafe}>
-                        Detail
-                        </Link>
+                    <button className="deleteBtn"
+                            onClick={this.toggleEdit}>
+                        Edit
                     </button>
-
+                    <button className="deleteBtn"
+                            onClick={this.deleteById}>
+                        Delete
+                    </button>
                 </div>
-            </li>
+            </div>
         )
     }
 }
+
+
+const mapStateToProps = (state, props) => {
+    const cafeId = props.match.params.id;
+    return {
+        cafe: state.cafes.find(cafe => cafe.id === cafeId)
+    }
+};
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -110,7 +131,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(CafeCard)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail));
 
-
-
+// export default connect(mapStateToProps, null)(withRouter(Detail));

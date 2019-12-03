@@ -17,6 +17,7 @@ class Cafe extends Component {
                 <CafeCard cafe={cafe} key={cafe.id}/>
             )
         });
+
         return (
             <div>
                 <h1 className="cafeTitle">SOFO Cafe Review List</h1>
@@ -36,7 +37,7 @@ class Cafe extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
     return {
         cafes: state.cafes,
         isFetching: state.isFetching
