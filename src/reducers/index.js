@@ -1,4 +1,4 @@
-import {REQUEST, SUCCESS,DELETE, EDIT} from '../actions';
+import {REQUEST, SUCCESS,DELETE, EDIT, FETCH} from '../actions/types';
 
 const defaultState = {
     cafes:[],
@@ -20,6 +20,10 @@ const cafeReducer = (state = defaultState, action) => {
             console.log(action.name);
             return {...state, isFetching:false,
             cafes: state.cafes.map(doc=> doc.id === action.docId? {...doc, name:action.name} : {...doc})};
+        case FETCH:
+            return {...state, isFetching:false,
+            cafes: [action.cafeDoc]};
+            // cafes: [ ...state.cafes, action.cafeDoc]};
         default:
             return state;
     }

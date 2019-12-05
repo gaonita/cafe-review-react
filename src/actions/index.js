@@ -1,9 +1,14 @@
 import {firestore} from "firebase";
+import history from '../history';
 
-export const REQUEST = 'REQUEST';
-export const SUCCESS = 'SUCCESS';
-export const DELETE = 'DELETE';
-export const EDIT = 'EDIT';
+import {
+    REQUEST,
+    SUCCESS,
+    DELETE,
+    EDIT,
+    FETCH
+} from './types';
+
 
 export const requestData = () => ({
     type: REQUEST
@@ -25,6 +30,26 @@ export const edit = (docId, cafeName) => ({
     name: cafeName
 });
 
+
+
+export const fetchDoc = (docId) => async dispatch => {
+    const documentArr = [];
+    const querySnapshot = await firestore().collection('cafe').get();
+    querySnapshot.forEach(doc => {
+        const docData = doc.data();
+        const docDataWithId = {...docData, id: doc.id};
+        documentArr.push(docDataWithId);
+        const cafeDoc = documentArr.find(cafe => cafe.id === docId);
+        // console.log(cafeDoc)
+    });
+    dispatch({
+        type: FETCH,
+        cafeDoc: documentArr.find(cafe => cafe.id === docId)
+    })
+};
+
+
+
 export const editDoc = (docId, cafeName) => {
     return async dispatch =>{
         const promise = firestore().collection('cafe').doc(docId).update({
@@ -44,8 +69,10 @@ export const deleteDoc = (docId) => {
             dispatch(deleteData(docId))
         };
         promise.then(callback).catch(error => console.error(error))
-    }
+    };
+    history.push('/');
 };
+
 
 export const getData = () => {
     return async dispatch => {
@@ -62,10 +89,10 @@ export const getData = () => {
         // promise.then is called when the operation is successful
         promise.then(onFinishedCallbackFunction)
             .catch(error => console.error(error));
-
         // operation is not finished yet in async
         // console.log(documentArr)
-    }
+    };
+    history.push('/');
 };
 
 

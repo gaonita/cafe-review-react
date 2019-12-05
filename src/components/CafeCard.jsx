@@ -77,7 +77,6 @@ class CafeCard extends Component {
                         <h4 id="li-head"
                             className={editing ? 'editing' : ''}
                             contentEditable={editing}
-                            // onClick={this.toggleEdit}
                             ref={this.myRef}
                             onBlur={this.save}
                             onKeyDown={this.handleKeyDown}
