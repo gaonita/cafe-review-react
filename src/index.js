@@ -3,11 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-// import * as firebase from 'firebase';
 import firebase from 'firebase/app';
 import 'firebase/firestore'
-
-// import 'firebase/<App>}';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store';

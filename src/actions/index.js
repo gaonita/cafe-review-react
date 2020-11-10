@@ -21,15 +21,14 @@ export const success = (cafeData) => ({
 
 export const deleteData = (docId) => ({
     type: DELETE,
-    docId:docId
+    docId: docId
 });
 
 export const edit = (docId, cafeName) => ({
     type: EDIT,
-    docId:docId,
+    docId: docId,
     name: cafeName
 });
-
 
 
 export const fetchDoc = (docId) => async dispatch => {
@@ -40,7 +39,6 @@ export const fetchDoc = (docId) => async dispatch => {
         const docDataWithId = {...docData, id: doc.id};
         documentArr.push(docDataWithId);
         const cafeDoc = documentArr.find(cafe => cafe.id === docId);
-        // console.log(cafeDoc)
     });
     dispatch({
         type: FETCH,
@@ -48,15 +46,13 @@ export const fetchDoc = (docId) => async dispatch => {
     })
 };
 
-
-
 export const editDoc = (docId, cafeName) => {
-    return async dispatch =>{
+    return async dispatch => {
         const promise = firestore().collection('cafe').doc(docId).update({
             name: cafeName
         });
         const callback = () => {
-            dispatch(edit(docId,cafeName))
+            dispatch(edit(docId, cafeName))
         };
         promise.then(callback).catch(error => console.error(error))
     }
@@ -83,7 +79,8 @@ export const getData = () => {
             querySnapshot.forEach(doc => {
                 const docData = doc.data();
                 const docDataWithId = {...docData, id: doc.id};
-                documentArr.push(docDataWithId)});
+                documentArr.push(docDataWithId)
+            });
             dispatch(success(documentArr))
         };
         // promise.then is called when the operation is successful
@@ -92,7 +89,6 @@ export const getData = () => {
         // operation is not finished yet in async
         // console.log(documentArr)
     };
-    history.push('/');
 };
 
 

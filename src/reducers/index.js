@@ -11,7 +11,7 @@ const cafeReducer = (state = defaultState, action) => {
         case REQUEST:
             return {...state, isFetching: true};
         case SUCCESS:
-            console.log(action.payload);
+            console.log('success payload', action.payload);
             return {...state, isFetching: false, cafes: action.payload};
         case DELETE:
             return {...state, isFetching:false,

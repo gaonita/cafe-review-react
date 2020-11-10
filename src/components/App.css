@@ -207,89 +207,27 @@ li {
     background-color: lightcyan;
 
 }
-
+.addPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .addForm {
-    margin: auto;
-    height: 600px;
-    width: 800px;
-    background-image: url("https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
-    background-position: center;
-    background-size: cover;
+    margin: 20px;
+    padding: 20px;
+    width: 50vw;
+    border: solid 1px black;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
 }
-
-.formDetail {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    padding-top: 90px;
+#textField {
+    /*padding-top: 10px;*/
+    /*border: solid 1px black;*/
 }
-
-.inputfield {
-    margin: 20px 0px 10px 460px;
-    width: 230px;
-    height: 15px;
-    padding: 10px;
-    border-radius: 2px;
-    border: solid 2px #fafafa;
-    background-color: rgba(243, 240, 243, 0.5);
-    color: white;
-    text-transform: uppercase;
-    transition: all 0.3s linear;
-    outline: none;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 1; /* Firefox */
-}
-
-input:hover::placeholder {
-    color: gray;
-}
-
-textarea:hover::placeholder {
-    color: gray;
-}
-
-#cafename {
-    font-size: 13px;
-    height: 30px;
-
-}
-
-#cafedescription {
-    height: 90px;
-}
-
-#submit {
-    margin: 50px 0px 10px 460px;
-    font-size: 18px;
-    width: 230px;
-    padding: 10px;
-    border-radius: 10px;
-    border: solid 2px white;
-    background-color: transparent;
-    color: white;
-    text-transform: uppercase;
-    transition: all 0.3s linear;
-}
-
-#submit:hover {
-    background-color: #fafafa;
-    color: gray;
-}
-
-.inputfield:hover {
-    background-color: #fafafa;
-    color: gray;
-}
-
-
 .detail {
     display: flex;
     justify-content: center;
@@ -389,7 +327,6 @@ padding: 0px;
         margin: auto;
         height: 60vh;
         width: 80vw;
-        background-image: url("https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
         background-position: center;
         background-size: cover;
         text-align: center;
@@ -398,18 +335,5 @@ padding: 0px;
         align-content: center;
     }
 
-    .formDetail {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
-
-    .inputfield {
-        margin: 20px 0px 10px 160px;
-    }
-
-    #submit {
-        margin: 20px 0px 10px 160px;
-    }
 }
 
